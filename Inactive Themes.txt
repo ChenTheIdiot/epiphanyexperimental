@@ -1,0 +1,1272 @@
+
+Theme name: Pizza Gold Dark Mode
+Theme data:
+button_component {
+  property_set {
+    key {
+      section_style: EMPHASIS_2
+      button_style: "filled"
+    }
+    color {
+      red: 0.7490196
+      green: 0.5647059
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_1
+      button_style: "filled"
+    }
+    color {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: REGULAR
+      button_style: "filled"
+    }
+    color {
+      red: 0.7490196
+      green: 0.5647059
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: REGULAR
+      button_style: "outlined"
+    }
+    color {
+      red: 0.7490196
+      green: 0.5647059
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: REGULAR
+      button_style: "text"
+    }
+    color {
+      red: 0.7490196
+      green: 0.5647059
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_1
+      button_style: "text"
+    }
+    color {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_2
+      button_style: "text"
+    }
+    color {
+      red: 0.7490196
+      green: 0.5647059
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_1
+      button_style: "outlined"
+    }
+    color {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_2
+      button_style: "outlined"
+    }
+    color {
+      red: 0.7490196
+      green: 0.5647059
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+}
+divider_component {
+  property_set {
+    key {
+      section_style: REGULAR
+    }
+    color {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_1
+    }
+    color {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_2
+    }
+    color {
+      red: 0.10980392
+      green: 0.10980392
+      blue: 0.10980392
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+}
+image_carousel_component {
+  property_set {
+    key {
+      section_style: REGULAR
+    }
+    active_dot_color {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_1
+    }
+    active_dot_color {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_2
+    }
+    active_dot_color {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+}
+navigation_component {
+  property_set {
+    side_selection_style: SIDE_BOLD
+    top_nav_separator: NONE
+    top_selection_style: TOP_BOLD
+    transparent_at_top: true
+  }
+}
+scheme_color_component {
+  property_set {
+    key {
+      section_style: REGULAR
+    }
+    accent1 {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+    accent2 {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+    accent3 {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+    dark1 {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+    dark2 {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+    link {
+      red: 0.23529412
+      green: 0.47058824
+      blue: 0.84705883
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_1
+    }
+    accent1 {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+    accent2 {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+    accent3 {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+    link {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_2
+    }
+    accent1 {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+    accent2 {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+    accent3 {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+    dark1 {
+      red: 1.0
+      green: 1.0
+      blue: 1.0
+      alpha {
+        value: 1.0
+      }
+    }
+    dark2 {
+      red: 1.0
+      green: 1.0
+      blue: 1.0
+      alpha {
+        value: 1.0
+      }
+    }
+    link {
+      blue: 1.0
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+}
+section_component {
+  property_set {
+    key {
+      section_style: REGULAR
+    }
+    background_color {
+      red: 0.10980392
+      green: 0.10980392
+      blue: 0.10980392
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_1
+    }
+    background_color {
+      red: 0.94509804
+      green: 0.7607843
+      blue: 0.19607843
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_2
+    }
+  }
+}
+site_component {
+  property_set {
+    primary_color {
+      red: 0.94509804
+      green: 0.7607843
+      blue: 0.19607843
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+}
+text_component {
+  heading_style {
+    heading: 0
+    paragraph_style {
+      line_spacing: 1.0
+      ltr: true
+      spacing_before: 0.0
+    }
+    text_style {
+      bold: false
+      font_size: 12.0
+      foreground {
+        scheme: 0
+      }
+      weighted_font_family: "IBM Plex Sans;500"
+    }
+  }
+  heading_style {
+    heading: 1
+    paragraph_style {
+      ltr: true
+      spacing_before: 34.0
+    }
+    text_style {
+      bold: false
+      foreground {
+        scheme: 4
+      }
+      weighted_font_family: "IBM Plex Sans"
+    }
+  }
+  heading_style {
+    heading: 2
+    paragraph_style {
+      line_spacing: 1.25
+      ltr: true
+      spacing_before: 18.0
+    }
+    text_style {
+      bold: false
+      font_size: 18.0
+      foreground {
+        scheme: 5
+      }
+      weighted_font_family: "IBM Plex Sans"
+    }
+  }
+  heading_style {
+    heading: 3
+    paragraph_style {
+      line_spacing: 1.25
+      ltr: true
+      spacing_before: 14.0
+    }
+    text_style {
+      bold: false
+      font_size: 14.0
+      foreground {
+        scheme: 6
+      }
+      weighted_font_family: "IBM Plex Sans"
+    }
+  }
+  heading_style {
+    heading: 102
+    paragraph_style {
+      line_spacing: 1.25
+      ltr: true
+      spacing_before: 8.0
+    }
+    text_style {
+      bold: false
+      font_size: 8.0
+      foreground {
+        scheme: 2
+      }
+      weighted_font_family: "IBM Plex Sans;500"
+    }
+  }
+}
+name: "Pizza Gold Dark Mode"
+id: "165411f959035d06_0"
+spacing_component {
+  property_set {
+    frame_selected: false
+  }
+}
+
+----------------------------------------------------
+
+Theme name: Darkmode
+Theme data:
+button_component {
+  property_set {
+    key {
+      section_style: EMPHASIS_2
+      button_style: "filled"
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_1
+      button_style: "filled"
+    }
+  }
+  property_set {
+    key {
+      section_style: REGULAR
+      button_style: "filled"
+    }
+  }
+  property_set {
+    key {
+      section_style: REGULAR
+      button_style: "outlined"
+    }
+  }
+  property_set {
+    key {
+      section_style: REGULAR
+      button_style: "text"
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_1
+      button_style: "text"
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_2
+      button_style: "text"
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_1
+      button_style: "outlined"
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_2
+      button_style: "outlined"
+    }
+  }
+}
+divider_component {
+  property_set {
+    key {
+      section_style: REGULAR
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_1
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_2
+    }
+  }
+}
+image_carousel_component {
+  property_set {
+    key {
+      section_style: REGULAR
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_1
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_2
+    }
+  }
+}
+navigation_component {
+  property_set {
+    nav_background_color {
+      red: 0.49803922
+      green: 0.3764706
+      alpha {
+        value: 1.0
+      }
+    }
+    side_nav_item_spacing: 8.0
+    side_selection_style: SIDE_BOLD
+    top_nav_separator: NONE
+    top_selection_style: TOP_BOLD
+    transparent_at_top: true
+  }
+}
+scheme_color_component {
+  property_set {
+    key {
+      section_style: REGULAR
+    }
+    link {
+      blue: 1.0
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_1
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_2
+    }
+  }
+}
+section_component {
+  property_set {
+    key {
+      section_style: REGULAR
+    }
+    background_color {
+      red: 0.10980392
+      green: 0.10980392
+      blue: 0.10980392
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_1
+    }
+    background_color {
+      red: 0.49803922
+      green: 0.3764706
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_2
+    }
+    background_color {
+      red: 0.6431373
+      green: 0.7607843
+      blue: 0.95686275
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+}
+site_component {
+  property_set {
+    primary_color {
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+}
+text_component {
+  heading_style {
+    heading: 0
+    paragraph_style {
+      line_spacing: 1.0
+      ltr: true
+      spacing_before: 6.0
+    }
+    text_style {
+      bold: false
+      font_size: 12.0
+      foreground {
+        scheme: 0
+      }
+      weighted_font_family: "IBM Plex Sans;500"
+    }
+  }
+  heading_style {
+    heading: 1
+    paragraph_style {
+      line_spacing: 1.0
+      ltr: true
+      spacing_before: 17.0
+    }
+    text_style {
+      bold: false
+      foreground {
+        scheme: 4
+      }
+      weighted_font_family: "IBM Plex Sans"
+    }
+  }
+  heading_style {
+    heading: 2
+    paragraph_style {
+      line_spacing: 1.0
+      ltr: true
+      spacing_before: 9.0
+    }
+    text_style {
+      bold: false
+      font_size: 18.0
+      foreground {
+        scheme: 5
+      }
+      weighted_font_family: "IBM Plex Sans"
+    }
+  }
+  heading_style {
+    heading: 3
+    paragraph_style {
+      line_spacing: 1.0
+      ltr: true
+      spacing_before: 7.0
+    }
+    text_style {
+      bold: false
+      font_size: 14.0
+      foreground {
+        scheme: 6
+      }
+      weighted_font_family: "IBM Plex Sans"
+    }
+  }
+  heading_style {
+    heading: 102
+    paragraph_style {
+      line_spacing: 1.0
+      ltr: true
+      spacing_before: 4.0
+    }
+    text_style {
+      bold: false
+      font_size: 8.0
+      foreground {
+        scheme: 2
+      }
+      weighted_font_family: "IBM Plex Sans;500"
+    }
+  }
+}
+name: "Darkmode"
+id: "2a4e2d6f32fefc23_148"
+spacing_component {
+  property_set {
+    density: COMPACT
+    site_width: WIDE
+    frame_selected: false
+  }
+}
+
+----------------------------------------------------
+
+Theme name: Red Velocity Dark Mode
+Theme data:
+button_component {
+  property_set {
+    key {
+      section_style: EMPHASIS_2
+      button_style: "filled"
+    }
+    color {
+      red: 0.7490196
+      green: 0.5647059
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_1
+      button_style: "filled"
+    }
+    color {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: REGULAR
+      button_style: "filled"
+    }
+    color {
+      red: 0.8
+      green: 0.25490198
+      blue: 0.14509805
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: REGULAR
+      button_style: "outlined"
+    }
+    color {
+      red: 0.8
+      green: 0.25490198
+      blue: 0.14509805
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: REGULAR
+      button_style: "text"
+    }
+    color {
+      red: 0.8
+      green: 0.25490198
+      blue: 0.14509805
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_1
+      button_style: "text"
+    }
+    color {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_2
+      button_style: "text"
+    }
+    color {
+      red: 0.7490196
+      green: 0.5647059
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_1
+      button_style: "outlined"
+    }
+    color {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_2
+      button_style: "outlined"
+    }
+    color {
+      red: 0.7490196
+      green: 0.5647059
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+}
+divider_component {
+  property_set {
+    key {
+      section_style: REGULAR
+    }
+    color {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_1
+    }
+    color {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_2
+    }
+    color {
+      red: 0.10980392
+      green: 0.10980392
+      blue: 0.10980392
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+}
+image_carousel_component {
+  property_set {
+    key {
+      section_style: REGULAR
+    }
+    active_dot_color {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_1
+    }
+    active_dot_color {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_2
+    }
+    active_dot_color {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+}
+navigation_component {
+  property_set {
+    side_nav_item_spacing: 8.0
+    side_selection_style: SIDE_BOLD
+    top_nav_separator: NONE
+    top_selection_style: TOP_BOLD
+    transparent_at_top: true
+  }
+}
+scheme_color_component {
+  property_set {
+    key {
+      section_style: REGULAR
+    }
+    accent1 {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+    accent2 {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+    accent3 {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+    dark1 {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+    dark2 {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+    link {
+      red: 0.23529412
+      green: 0.47058824
+      blue: 0.84705883
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_1
+    }
+    accent1 {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+    accent2 {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+    accent3 {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+    link {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_2
+    }
+    accent1 {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+    accent2 {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+    accent3 {
+      red: 0.9764706
+      green: 0.9764706
+      blue: 0.9764706
+      alpha {
+        value: 1.0
+      }
+    }
+    dark1 {
+      red: 1.0
+      green: 1.0
+      blue: 1.0
+      alpha {
+        value: 1.0
+      }
+    }
+    dark2 {
+      red: 1.0
+      green: 1.0
+      blue: 1.0
+      alpha {
+        value: 1.0
+      }
+    }
+    link {
+      blue: 1.0
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+}
+section_component {
+  property_set {
+    key {
+      section_style: REGULAR
+    }
+    background_color {
+      red: 0.10980392
+      green: 0.10980392
+      blue: 0.10980392
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_1
+    }
+    background_color {
+      red: 0.8
+      green: 0.25490198
+      blue: 0.14509805
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+  property_set {
+    key {
+      section_style: EMPHASIS_2
+    }
+    background_color {
+      red: 0.8
+      green: 0.25490198
+      blue: 0.14509805
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+}
+site_component {
+  property_set {
+    primary_color {
+      red: 0.8
+      green: 0.25490198
+      blue: 0.14509805
+      alpha {
+        value: 1.0
+      }
+    }
+  }
+}
+text_component {
+  heading_style {
+    heading: 0
+    paragraph_style {
+      line_spacing: 1.0
+      ltr: true
+      spacing_before: 0.0
+    }
+    text_style {
+      bold: false
+      font_size: 12.0
+      foreground {
+        scheme: 0
+      }
+      weighted_font_family: "IBM Plex Sans;500"
+    }
+  }
+  heading_style {
+    heading: 1
+    paragraph_style {
+      line_spacing: 1.0
+      ltr: true
+      spacing_before: 17.0
+    }
+    text_style {
+      bold: false
+      foreground {
+        scheme: 4
+      }
+      weighted_font_family: "IBM Plex Sans"
+    }
+  }
+  heading_style {
+    heading: 2
+    paragraph_style {
+      line_spacing: 1.0
+      ltr: true
+      spacing_before: 9.0
+    }
+    text_style {
+      bold: false
+      font_size: 18.0
+      foreground {
+        scheme: 5
+      }
+      weighted_font_family: "IBM Plex Sans"
+    }
+  }
+  heading_style {
+    heading: 3
+    paragraph_style {
+      line_spacing: 1.0
+      ltr: true
+      spacing_before: 7.0
+    }
+    text_style {
+      bold: false
+      font_size: 14.0
+      foreground {
+        scheme: 6
+      }
+      weighted_font_family: "IBM Plex Sans"
+    }
+  }
+  heading_style {
+    heading: 102
+    paragraph_style {
+      line_spacing: 1.0
+      ltr: true
+      spacing_before: 4.0
+    }
+    text_style {
+      bold: false
+      font_size: 8.0
+      foreground {
+        scheme: 2
+      }
+      weighted_font_family: "IBM Plex Sans;500"
+    }
+  }
+}
+name: "Red Velocity Dark Mode"
+id: "2a4e2d6f32fefc23_149"
+spacing_component {
+  property_set {
+    density: COMPACT
+    site_width: WIDE
+    frame_selected: false
+  }
+}
+
+----------------------------------------------------

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Cartridge Room</title>
+<style>
+  :root{
+    --bg: #1c1730;
+    --bg-2: #241d3d;
+    --panel: #2a2247;
+    --ink: #f1ecdf;
+    --ink-dim: #b6aecb;
+    --gold: #d9a548;
+    --teal: #3fb8a6;
+    --coral: #e0637a;
+    --line: #3a3159;
+    --mono: 'Courier New', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  *{ box-sizing: border-box; }
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 600px at 15% -10%, #2d2452 0%, transparent 60%),
+      radial-gradient(900px 500px at 100% 0%, #24325a 0%, transparent 55%),
+      var(--bg);
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', serif;
+    min-height: 100vh;
+  }
+
+  header{
+    padding: 56px 6vw 32px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+
+  .kicker{
+    font-family: var(--mono);
+    letter-spacing: 0.06em;
+    color: var(--teal);
+    font-size: 13px;
+    margin: 0 0 10px;
+  }
+
+  h1{
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 700;
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.02;
+    margin: 0 0 14px;
+    color: var(--ink);
+  }
+
+  h1 em{
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .sub{
+    max-width: 560px;
+    color: var(--ink-dim);
+    font-size: 17px;
+    line-height: 1.55;
+    margin: 0 0 6px;
+  }
+
+  .count{
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--ink-dim);
+    margin-top: 18px;
+  }
+
+  .count b{ color: var(--gold); font-weight: 700; }
+
+  .controls{
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: rgba(28, 23, 48, 0.94);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    padding: 18px 6vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+  }
+
+  #search{
+    flex: 1 1 280px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    font-family: var(--mono);
+    font-size: 15px;
+    padding: 12px 16px;
+    border-radius: 3px;
+    outline: none;
+  }
+  #search::placeholder{ color: #7d7398; }
+  #search:focus{ border-color: var(--gold); }
+
+  .alpha-nav{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+  .alpha-nav a{
+    color: var(--ink-dim);
+    text-decoration: none;
+    padding: 5px 7px;
+    border: 1px solid transparent;
+  }
+  .alpha-nav a:hover{ color: var(--gold); border-color: var(--line); }
+
+  main{ padding: 10px 6vw 100px; }
+
+  .letter-group{ margin-top: 44px; }
+
+  .letter-heading{
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 8px;
+    margin: 0 0 18px;
+  }
+
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+  }
+
+  .card{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--tint, var(--gold));
+    padding: 14px 16px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: transform 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+  }
+  .card:hover{
+    transform: translateX(2px);
+    background: var(--bg-2);
+    border-color: var(--tint, var(--gold));
+  }
+
+  .badge{
+    flex: 0 0 auto;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--bg);
+    background: var(--tint, var(--gold));
+    border-radius: 2px;
+  }
+
+  .card .name{
+    font-size: 15.5px;
+    line-height: 1.3;
+    word-break: break-word;
+  }
+
+  .empty{
+    display:none;
+    color: var(--ink-dim);
+    font-family: var(--mono);
+    font-size: 14px;
+    padding: 40px 0;
+  }
+
+  footer{
+    padding: 30px 6vw 50px;
+    border-top: 1px solid var(--line);
+    color: var(--ink-dim);
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+
+  ::selection{ background: var(--gold); color: var(--bg); }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="kicker">// LOCAL ARCHIVE — BROWSE BY TITLE</p>
+  <h1>The Cartridge <em>Room</em></h1>
+  <p class="sub">Every title in the collection, shelved alphabetically. Search by name or scan the shelves below.</p>
+  <p class="count"><b id="visibleCount">0</b> of <b id="totalCount">0</b> titles shown</p>
+</header>
+
+<div class="controls">
+  <input type="text" id="search" placeholder="Search the shelves... (e.g. &quot;tanks&quot;, &quot;pokemon&quot;, &quot;fnaf&quot;)" autocomplete="off">
+  <nav class="alpha-nav" id="alphaNav"></nav>
+</div>
+
+<main>
+  <div id="results"></div>
+  <p class="empty" id="emptyMsg">No titles match that search. Try a different word.</p>
+</main>
+
+<footer>
+  index.html — generated catalog of local game files. Click any title to open it directly.
+</footer>
+
+<script>
+const GAMES = [{"file": "1.html", "name": "1"}, {"file": "1 on 1 Soccer.html", "name": "1 on 1 Soccer"}, {"file": "1 on 1 Tennis.html", "name": "1 on 1 Tennis"}, {"file": "10 Bullets.html", "name": "10 Bullets"}, {"file": "10 Minutes till Dawn.html", "name": "10 Minutes till Dawn"}, {"file": "12 Mini Battles.html", "name": "12 Mini Battles"}, {"file": "1v1lol.html", "name": "1v1lol"}, {"file": "2048.html", "name": "2048"}, {"file": "2048 Cupcakes.html", "name": "2048 Cupcakes"}, {"file": "2d Shooting.html", "name": "2d Shooting"}, {"file": "2Doom.html", "name": "2Doom"}, {"file": "3 Slices 2.html", "name": "3 Slices 2"}, {"file": "4th and Goal.html", "name": "4th and Goal"}, {"file": "60 Seconds Burger Run.html", "name": "60 Seconds Burger Run"}, {"file": "8 Ball Pool.html", "name": "8 Ball Pool"}, {"file": "9007199254740992.html", "name": "9007199254740992"}, {"file": "99 Balls.html", "name": "99 Balls"}, {"file": "A Dance of Fire and Ice.html", "name": "A Dance of Fire and Ice"}, {"file": "A Dark Room.html", "name": "A Dark Room"}, {"file": "A Day In The Office.html", "name": "A Day In The Office"}, {"file": "A Koopas Revenge.html", "name": "A Koopas Revenge"}, {"file": "A Koopas Revenge 2.html", "name": "A Koopas Revenge 2"}, {"file": "A Small World Cup.html", "name": "A Small World Cup"}, {"file": "Abandoned.html", "name": "Abandoned"}, {"file": "Abandoned 3.html", "name": "Abandoned 3"}, {"file": "Ace Gangster Taxi.html", "name": "Ace Gangster Taxi"}, {"file": "Achievement Unlocked.html", "name": "Achievement Unlocked"}, {"file": "Achievement Unlocked 2.html", "name": "Achievement Unlocked 2"}, {"file": "Achievement Unlocked 3.html", "name": "Achievement Unlocked 3"}, {"file": "Achilles.html", "name": "Achilles"}, {"file": "Achilles 2.html", "name": "Achilles 2"}, {"file": "Adventure Capitalist.html", "name": "Adventure Capitalist"}, {"file": "Age of War.html", "name": "Age of War"}, {"file": "Age of War 2.html", "name": "Age of War 2"}, {"file": "Ahoy Survival.html", "name": "Ahoy Survival"}, {"file": "Alien Hominid.html", "name": "Alien Hominid"}, {"file": "Alien Sky Invasion.html", "name": "Alien Sky Invasion"}, {"file": "Alien Transporter.html", "name": "Alien Transporter"}, {"file": "Allocation.html", "name": "Allocation"}, {"file": "Amazing Strange Rope Police.html", "name": "Amazing Strange Rope Police"}, {"file": "Amidst The Sky.html", "name": "Amidst The Sky"}, {"file": "Amigo Pancho.html", "name": "Amigo Pancho"}, {"file": "Amigo Pancho 2.html", "name": "Amigo Pancho 2"}, {"file": "Amigo Pancho 3.html", "name": "Amigo Pancho 3"}, {"file": "Amigo Pancho 4.html", "name": "Amigo Pancho 4"}, {"file": "Amigo Pancho 5.html", "name": "Amigo Pancho 5"}, {"file": "Amigo Pancho 6.html", "name": "Amigo Pancho 6"}, {"file": "Amorphous.html", "name": "Amorphous"}, {"file": "Angry Birds.html", "name": "Angry Birds"}, {"file": "Angry Birds Showdown.html", "name": "Angry Birds Showdown"}, {"file": "Angry Birds Space.html", "name": "Angry Birds Space"}, {"file": "Animator VS Animation.html", "name": "Animator VS Animation"}, {"file": "Another World.html", "name": "Another World"}, {"file": "Apple Shooter.html", "name": "Apple Shooter"}, {"file": "Apple Worm.html", "name": "Apple Worm"}, {"file": "Aquaparkio.html", "name": "Aquaparkio"}, {"file": "Archery World Tour.html", "name": "Archery World Tour"}, {"file": "Ascent.html", "name": "Ascent"}, {"file": "Assessment Examination.html", "name": "Assessment Examination"}, {"file": "Asteroids.html", "name": "Asteroids"}, {"file": "Attack Hole.html", "name": "Attack Hole"}, {"file": "Avalanche.html", "name": "Avalanche"}, {"file": "Aviamasters.html", "name": "Aviamasters"}, {"file": "Awesome Pirates.html", "name": "Awesome Pirates"}, {"file": "Awesome Planes.html", "name": "Awesome Planes"}, {"file": "Awesome Tanks.html", "name": "Awesome Tanks"}, {"file": "Awesome Tanks 2.html", "name": "Awesome Tanks 2"}, {"file": "Babel Tower.html", "name": "Babel Tower"}, {"file": "Baby Chicco Adventure.html", "name": "Baby Chicco Adventure"}, {"file": "Baby Sniper in Vietnam.html", "name": "Baby Sniper in Vietnam"}, {"file": "Backrooms.html", "name": "Backrooms"}, {"file": "Backrooms 2D.html", "name": "Backrooms 2D"}, {"file": "Backyard Baseball.html", "name": "Backyard Baseball"}, {"file": "Backyard Sports Sandlot Sluggers.html", "name": "Backyard Sports Sandlot Sluggers"}, {"file": "Bacon May Die.html", "name": "Bacon May Die"}, {"file": "Bad Bodyguards.html", "name": "Bad Bodyguards"}, {"file": "Bad Ice Cream.html", "name": "Bad Ice Cream"}, {"file": "Bad Monday Simulator.html", "name": "Bad Monday Simulator"}, {"file": "Bad Parenting.html", "name": "Bad Parenting"}, {"file": "Bad Piggies.html", "name": "Bad Piggies"}, {"file": "Bad Time Simulator.html", "name": "Bad Time Simulator"}, {"file": "Baldis Basics.html", "name": "Baldis Basics"}, {"file": "Baldis Basics Remastered.html", "name": "Baldis Basics Remastered"}, {"file": "Baldis Basics The Ultimate Decompile.html", "name": "Baldis Basics The Ultimate Decompile"}, {"file": "Baldis Fun New School Ultimate.html", "name": "Baldis Fun New School Ultimate"}, {"file": "Ball Blast.html", "name": "Ball Blast"}, {"file": "Balls and Bricks.html", "name": "Balls and Bricks"}, {"file": "Banana Simulator.html", "name": "Banana Simulator"}, {"file": "Bandit Gunslinger.html", "name": "Bandit Gunslinger"}, {"file": "Bank Robbery 2.html", "name": "Bank Robbery 2"}, {"file": "BAS.html", "name": "BAS"}, {"file": "Baseball Bros.html", "name": "Baseball Bros"}, {"file": "Basektball FRVR.html", "name": "Basektball FRVR"}, {"file": "Basket Battle.html", "name": "Basket Battle"}, {"file": "Basket Random.html", "name": "Basket Random"}, {"file": "Basketball Legends.html", "name": "Basketball Legends"}, {"file": "Battle Simulator.html", "name": "Battle Simulator"}, {"file": "Bazooka Boy.html", "name": "Bazooka Boy"}, {"file": "Bearbarians.html", "name": "Bearbarians"}, {"file": "Bearsus.html", "name": "Bearsus"}, {"file": "Bee Movie Script Reader.html", "name": "Bee Movie Script Reader"}, {"file": "BERGENTRUCK 201X.html", "name": "BERGENTRUCK 201X"}, {"file": "BFDIA 5B.html", "name": "BFDIA 5B"}, {"file": "Binding of Isaac - Wrath of the Lamb Eternal.html", "name": "Binding of Isaac - Wrath of the Lamb Eternal"}, {"file": "Bitlife.html", "name": "Bitlife"}, {"file": "Blackjack.html", "name": "Blackjack"}, {"file": "Blackjack_1.html", "name": "Blackjack_1"}, {"file": "Blocky Snakes.html", "name": "Blocky Snakes"}, {"file": "Bloodmoney.html", "name": "Bloodmoney"}, {"file": "Bloxorz.html", "name": "Bloxorz"}, {"file": "Bootleg Brawl Stars.html", "name": "Bootleg Brawl Stars"}, {"file": "Bouncemasters.html", "name": "Bouncemasters"}, {"file": "Bowmasters.html", "name": "Bowmasters"}, {"file": "BTD1.html", "name": "BTD1"}, {"file": "BTD2.html", "name": "BTD2"}, {"file": "BTD3.html", "name": "BTD3"}, {"file": "BTD4.html", "name": "BTD4"}, {"file": "BTD5.html", "name": "BTD5"}, {"file": "Buckshot Roulette.html", "name": "Buckshot Roulette"}, {"file": "BuildNowgg.html", "name": "BuildNowgg"}, {"file": "Calculator.html", "name": "Calculator"}, {"file": "Candy Crush.html", "name": "Candy Crush"}, {"file": "CaptchaWare.html", "name": "CaptchaWare"}, {"file": "Car Crash 3.html", "name": "Car Crash 3"}, {"file": "Cave Story.html", "name": "Cave Story"}, {"file": "Cell Machine.html", "name": "Cell Machine"}, {"file": "Cell to Singularity.html", "name": "Cell to Singularity"}, {"file": "Chrome Dino Mobile.html", "name": "Chrome Dino Mobile"}, {"file": "Civiballs.html", "name": "Civiballs"}, {"file": "Clear Vision.html", "name": "Clear Vision"}, {"file": "Clear Vision  2.html", "name": "Clear Vision  2"}, {"file": "Clear Vision 3.html", "name": "Clear Vision 3"}, {"file": "Clear Vision 4.html", "name": "Clear Vision 4"}, {"file": "Clear Vision 5.html", "name": "Clear Vision 5"}, {"file": "Connect Four Multiplayer.html", "name": "Connect Four Multiplayer"}, {"file": "Cookie Clicker.html", "name": "Cookie Clicker"}, {"file": "Coreball.html", "name": "Coreball"}, {"file": "Crappy Agario.html", "name": "Crappy Agario"}, {"file": "Crazy Cars.html", "name": "Crazy Cars"}, {"file": "Crazy Cattle 3d.html", "name": "Crazy Cattle 3d"}, {"file": "Crazy Chicken 3d.html", "name": "Crazy Chicken 3d"}, {"file": "Crossy Road.html", "name": "Crossy Road"}, {"file": "CS 16.html", "name": "CS 16"}, {"file": "Deep Sleep.html", "name": "Deep Sleep"}, {"file": "Deepest Sword.html", "name": "Deepest Sword"}, {"file": "Deltarune Chapters 1-2.html", "name": "Deltarune Chapters 1-2"}, {"file": "Deltatraveler.html", "name": "Deltatraveler"}, {"file": "Dig To China.html", "name": "Dig To China"}, {"file": "Dino Run.html", "name": "Dino Run"}, {"file": "Dino Run Enter Planet D.html", "name": "Dino Run Enter Planet D"}, {"file": "Dino Run Marathon of Doom.html", "name": "Dino Run Marathon of Doom"}, {"file": "Doblox.html", "name": "Doblox"}, {"file": "Doge Miner.html", "name": "Doge Miner"}, {"file": "Doodle Jump.html", "name": "Doodle Jump"}, {"file": "Doom.html", "name": "Doom"}, {"file": "Dragon Ball Z Devolution.html", "name": "Dragon Ball Z Devolution"}, {"file": "Drift Boss.html", "name": "Drift Boss"}, {"file": "Drive Mad.html", "name": "Drive Mad"}, {"file": "Duck Life 2.html", "name": "Duck Life 2"}, {"file": "Duck Life 3.html", "name": "Duck Life 3"}, {"file": "Duck Life 4.html", "name": "Duck Life 4"}, {"file": "Duck Life 5.html", "name": "Duck Life 5"}, {"file": "Duck Life Adventure.html", "name": "Duck Life Adventure"}, {"file": "Duck Life Battle.html", "name": "Duck Life Battle"}, {"file": "Duck Life Original.html", "name": "Duck Life Original"}, {"file": "Duck Life Space.html", "name": "Duck Life Space"}, {"file": "Dumpling.html", "name": "Dumpling"}, {"file": "Eaglecraft Minecraft port.html", "name": "Eaglecraft Minecraft port"}, {"file": "Earn to Die.html", "name": "Earn to Die"}, {"file": "Earn to Die 2.html", "name": "Earn to Die 2"}, {"file": "EmulatorJS.html", "name": "EmulatorJS"}, {"file": "Endoparasitic.html", "name": "Endoparasitic"}, {"file": "Escape Road.html", "name": "Escape Road"}, {"file": "Evolution.html", "name": "Evolution"}, {"file": "Fake Among Us.html", "name": "Fake Among Us"}, {"file": "Fake Melon Playground.html", "name": "Fake Melon Playground"}, {"file": "Feed the Void.html", "name": "Feed the Void"}, {"file": "Fireboy and Watergirl.html", "name": "Fireboy and Watergirl"}, {"file": "Fisquarium.html", "name": "Fisquarium"}, {"file": "Five Nights at Epsteins.html", "name": "Five Nights at Epsteins"}, {"file": "FNAF.html", "name": "FNAF"}, {"file": "FNAF 2.html", "name": "FNAF 2"}, {"file": "FNAF 3.html", "name": "FNAF 3"}, {"file": "FNAF 4.html", "name": "FNAF 4"}, {"file": "FNAF Sister Location.html", "name": "FNAF Sister Location"}, {"file": "Free Rider.html", "name": "Free Rider"}, {"file": "Fruit Ninja.html", "name": "Fruit Ninja"}, {"file": "Fused 240.html", "name": "Fused 240"}, {"file": "Geometry Dash Lite.html", "name": "Geometry Dash Lite"}, {"file": "Geometry Dash Subzero.html", "name": "Geometry Dash Subzero"}, {"file": "Github Search.html", "name": "Github Search"}, {"file": "Gold Miner.html", "name": "Gold Miner"}, {"file": "Google Dino.html", "name": "Google Dino"}, {"file": "Gorilla Tag.html", "name": "Gorilla Tag"}, {"file": "Granny.html", "name": "Granny"}, {"file": "Graphing Calculator.html", "name": "Graphing Calculator"}, {"file": "Gravity.html", "name": "Gravity"}, {"file": "Grow Your Garden.html", "name": "Grow Your Garden"}, {"file": "GTA 2.html", "name": "GTA 2"}, {"file": "GTA Advance.html", "name": "GTA Advance"}, {"file": "Gunspin.html", "name": "Gunspin"}, {"file": "Half Life.html", "name": "Half Life"}, {"file": "Happy Wheels Demo.html", "name": "Happy Wheels Demo"}, {"file": "Helios BUGGY.html", "name": "Helios BUGGY"}, {"file": "Helix Jump.html", "name": "Helix Jump"}, {"file": "Hollow Knight.html", "name": "Hollow Knight"}, {"file": "House of Hazards.html", "name": "House of Hazards"}, {"file": "HTML AboutBlank Runner.html", "name": "HTML AboutBlank Runner"}, {"file": "Idle Breakout.html", "name": "Idle Breakout"}, {"file": "Idle Dice.html", "name": "Idle Dice"}, {"file": "Infinite Craft.html", "name": "Infinite Craft"}, {"file": "Iron Lung.html", "name": "Iron Lung"}, {"file": "Jet Rush.html", "name": "Jet Rush"}, {"file": "Jetpack Joyride.html", "name": "Jetpack Joyride"}, {"file": "Just One Boss.html", "name": "Just One Boss"}, {"file": "Just One Button Jam 6 Top 2.html", "name": "Just One Button Jam 6 Top 2"}, {"file": "Just One Button Scratch Edition.html", "name": "Just One Button Scratch Edition"}, {"file": "Kalikan.html", "name": "Kalikan"}, {"file": "Kim Jong Un Tile Puzzle.html", "name": "Kim Jong Un Tile Puzzle"}, {"file": "Learn to Fly.html", "name": "Learn to Fly"}, {"file": "Learn to Fly 2.html", "name": "Learn to Fly 2"}, {"file": "Learn to Fly 3.html", "name": "Learn to Fly 3"}, {"file": "Learn to Fly Idle.html", "name": "Learn to Fly Idle"}, {"file": "Little Alchemy 2.html", "name": "Little Alchemy 2"}, {"file": "Lobotomy Dash.html", "name": "Lobotomy Dash"}, {"file": "Mandelbrot Set Explorer.html", "name": "Mandelbrot Set Explorer"}, {"file": "Mario Kart 64.html", "name": "Mario Kart 64"}, {"file": "Meatboy.html", "name": "Meatboy"}, {"file": "Medal Of Honor.html", "name": "Medal Of Honor"}, {"file": "Metal Gear Solid.html", "name": "Metal Gear Solid"}, {"file": "Murder.html", "name": "Murder"}, {"file": "N.html", "name": "N"}, {"file": "NautilusOS.html", "name": "NautilusOS"}, {"file": "Oneshot Old.html", "name": "Oneshot Old"}, {"file": "Operius.html", "name": "Operius"}, {"file": "Papas Bakeria.html", "name": "Papas Bakeria"}, {"file": "Papas Burgeria.html", "name": "Papas Burgeria"}, {"file": "Papas Cheeseria.html", "name": "Papas Cheeseria"}, {"file": "Papas Pizzeria.html", "name": "Papas Pizzeria"}, {"file": "Paper IO 2.html", "name": "Paper IO 2"}, {"file": "Paper IO 3d DOWN.html", "name": "Paper IO 3d DOWN"}, {"file": "Penguin Diner.html", "name": "Penguin Diner"}, {"file": "Penguin Pass.html", "name": "Penguin Pass"}, {"file": "Pereelous.html", "name": "Pereelous"}, {"file": "Persona.html", "name": "Persona"}, {"file": "Persona 2.html", "name": "Persona 2"}, {"file": "Pico 8 Edu.html", "name": "Pico 8 Edu"}, {"file": "Pixel Shooter.html", "name": "Pixel Shooter"}, {"file": "Pixel Speedrun.html", "name": "Pixel Speedrun"}, {"file": "Please Let Your Number In.html", "name": "Please Let Your Number In"}, {"file": "Pokemon Black.html", "name": "Pokemon Black"}, {"file": "Pokemon Clover.html", "name": "Pokemon Clover"}, {"file": "Pokemon Diamond.html", "name": "Pokemon Diamond"}, {"file": "Pokemon Emerald.html", "name": "Pokemon Emerald"}, {"file": "Pokemon Gaia.html", "name": "Pokemon Gaia"}, {"file": "Pokemon White.html", "name": "Pokemon White"}, {"file": "Pong.html", "name": "Pong"}, {"file": "Primary Eaglecraft link.html", "name": "Primary Eaglecraft link"}, {"file": "Prism Client.html", "name": "Prism Client"}, {"file": "Ragdoll Archers.html", "name": "Ragdoll Archers"}, {"file": "Ragdoll Hit.html", "name": "Ragdoll Hit"}, {"file": "Ravenbase.html", "name": "Ravenbase"}, {"file": "Reach The Core.html", "name": "Reach The Core"}, {"file": "Real Flight Simulator.html", "name": "Real Flight Simulator"}, {"file": "Red Tie Runner.html", "name": "Red Tie Runner"}, {"file": "Resident Evil.html", "name": "Resident Evil"}, {"file": "Resident Evil 2 Disk 1.html", "name": "Resident Evil 2 Disk 1"}, {"file": "Resident Evil 2 Disk 2.html", "name": "Resident Evil 2 Disk 2"}, {"file": "Resident Evil 3.html", "name": "Resident Evil 3"}, {"file": "Retro Bowl.html", "name": "Retro Bowl"}, {"file": "Retro Bowl College.html", "name": "Retro Bowl College"}, {"file": "Ripoff Holeio.html", "name": "Ripoff Holeio"}, {"file": "RNG Mini.html", "name": "RNG Mini"}, {"file": "Rocket League from Temu.html", "name": "Rocket League from Temu"}, {"file": "Rooftop Snipers.html", "name": "Rooftop Snipers"}, {"file": "Rooftop Snipers 2.html", "name": "Rooftop Snipers 2"}, {"file": "Ruffle Emulator.html", "name": "Ruffle Emulator"}, {"file": "Run.html", "name": "Run"}, {"file": "Sandbox City.html", "name": "Sandbox City"}, {"file": "Sandboxels.html", "name": "Sandboxels"}, {"file": "Scratch Editor.html", "name": "Scratch Editor"}, {"file": "Sift Head Cartels Act 1.html", "name": "Sift Head Cartels Act 1"}, {"file": "Sift Heads World Ultimatum.html", "name": "Sift Heads World Ultimatum"}, {"file": "Silk.html", "name": "Silk"}, {"file": "Slope.html", "name": "Slope"}, {"file": "Slope 2 Player.html", "name": "Slope 2 Player"}, {"file": "Snakelike.html", "name": "Snakelike"}, {"file": "Snow Rider 3D.html", "name": "Snow Rider 3D"}, {"file": "Snowballio GLITCHY.html", "name": "Snowballio GLITCHY"}, {"file": "Soccer Random.html", "name": "Soccer Random"}, {"file": "Solar Smash.html", "name": "Solar Smash"}, {"file": "Solitaire.html", "name": "Solitaire"}, {"file": "Sonic CD.html", "name": "Sonic CD"}, {"file": "Soundboard.html", "name": "Soundboard"}, {"file": "Space Waves.html", "name": "Space Waves"}, {"file": "Stateio.html", "name": "Stateio"}, {"file": "Stickman Duel.html", "name": "Stickman Duel"}, {"file": "Street Fighter 2.html", "name": "Street Fighter 2"}, {"file": "Super Mario Bros.html", "name": "Super Mario Bros"}, {"file": "Super Street Fighter 2.html", "name": "Super Street Fighter 2"}, {"file": "Table Tanks.html", "name": "Table Tanks"}, {"file": "Tag CoolMathGames.html", "name": "Tag CoolMathGames"}, {"file": "Tapper.html", "name": "Tapper"}, {"file": "Tasty Planet.html", "name": "Tasty Planet"}, {"file": "Temple Run 2.html", "name": "Temple Run 2"}, {"file": "Temu snake io.html", "name": "Temu snake io"}, {"file": "Terra.html", "name": "Terra"}, {"file": "The Binding of Issac Wrath of the Lamb.html", "name": "The Binding of Issac Wrath of the Lamb"}, {"file": "The Man From The Window.html", "name": "The Man From The Window"}, {"file": "the motherlode of games.html", "name": "the motherlode of games"}, {"file": "There Is No Game.html", "name": "There Is No Game"}, {"file": "Throw a Potato.html", "name": "Throw a Potato"}, {"file": "Throw a Potato Again.html", "name": "Throw a Potato Again"}, {"file": "Time Shooter 1.html", "name": "Time Shooter 1"}, {"file": "Time Shooter 2.html", "name": "Time Shooter 2"}, {"file": "Time Shooter 3 SWAT.html", "name": "Time Shooter 3 SWAT"}, {"file": "Tomb of the Mask.html", "name": "Tomb of the Mask"}, {"file": "Toothpaste Network.html", "name": "Toothpaste Network"}, {"file": "Townscraper.html", "name": "Townscraper"}, {"file": "Tunnel Rush.html", "name": "Tunnel Rush"}, {"file": "ULTRAKILL Demo.html", "name": "ULTRAKILL Demo"}, {"file": "Undertale.html", "name": "Undertale"}, {"file": "Undertale Last Breath.html", "name": "Undertale Last Breath"}, {"file": "Undertale Yellow.html", "name": "Undertale Yellow"}, {"file": "Uno.html", "name": "Uno"}, {"file": "Untitled Goose Gme.html", "name": "Untitled Goose Gme"}, {"file": "Vex.html", "name": "Vex"}, {"file": "Vex 4.html", "name": "Vex 4"}, {"file": "Video link MAY BE BLOCKED.html", "name": "Video link MAY BE BLOCKED"}, {"file": "Video Player.html", "name": "Video Player"}, {"file": "Video Player V1.html", "name": "Video Player V1"}, {"file": "Vortex.html", "name": "Vortex"}, {"file": "Webfishing.html", "name": "Webfishing"}, {"file": "Winter Falling.html", "name": "Winter Falling"}, {"file": "Wolfenstein 3D Emscripten.html", "name": "Wolfenstein 3D Emscripten"}, {"file": "Woodworm.html", "name": "Woodworm"}, {"file": "Wordle.html", "name": "Wordle"}, {"file": "Worlds Hardest Game.html", "name": "Worlds Hardest Game"}, {"file": "Zen Word.html", "name": "Zen Word"}]
+;
+
+const tints = ['#d9a548', '#3fb8a6', '#e0637a', '#7e9cd8', '#c98bd8', '#8fbf6b'];
+function tintFor(str){
+  let h = 0;
+  for (let i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) >>> 0;
+  return tints[h % tints.length];
+}
+
+const resultsEl = document.getElementById('results');
+const emptyEl = document.getElementById('emptyMsg');
+const totalCountEl = document.getElementById('totalCount');
+const visibleCountEl = document.getElementById('visibleCount');
+const alphaNavEl = document.getElementById('alphaNav');
+const searchEl = document.getElementById('search');
+
+totalCountEl.textContent = GAMES.length;
+
+// group by first letter (digits/symbols bucketed under #)
+function letterOf(name){
+  const c = name.trim()[0].toUpperCase();
+  return /[A-Z]/.test(c) ? c : '#';
+}
+
+function render(filterText){
+  const q = filterText.trim().toLowerCase();
+  const filtered = q ? GAMES.filter(g => g.name.toLowerCase().includes(q)) : GAMES;
+
+  visibleCountEl.textContent = filtered.length;
+  resultsEl.innerHTML = '';
+  emptyEl.style.display = filtered.length === 0 ? 'block' : 'none';
+
+  const groups = {};
+  filtered.forEach(g => {
+    const L = letterOf(g.name);
+    (groups[L] = groups[L] || []).push(g);
+  });
+
+  const letters = Object.keys(groups).sort();
+
+  letters.forEach(L => {
+    const section = document.createElement('div');
+    section.className = 'letter-group';
+    section.id = 'letter-' + L;
+
+    const heading = document.createElement('h2');
+    heading.className = 'letter-heading';
+    heading.textContent = L + '  ·  ' + groups[L].length + (groups[L].length === 1 ? ' title' : ' titles');
+    section.appendChild(heading);
+
+    const grid = document.createElement('div');
+    grid.className = 'grid';
+
+    groups[L].forEach(g => {
+      const a = document.createElement('a');
+      a.className = 'card';
+      a.href = encodeURI(g.file);
+      a.style.setProperty('--tint', tintFor(g.name));
+      a.innerHTML = '<span class="badge">' + g.name.trim()[0].toUpperCase() + '</span><span class="name">' + g.name + '</span>';
+      grid.appendChild(a);
+    });
+
+    section.appendChild(grid);
+    resultsEl.appendChild(section);
+  });
+}
+
+function buildAlphaNav(){
+  const allLetters = Array.from(new Set(GAMES.map(g => letterOf(g.name)))).sort();
+  alphaNavEl.innerHTML = allLetters.map(L => '<a href="#letter-' + L + '">' + L + '</a>').join('');
+}
+
+searchEl.addEventListener('input', () => render(searchEl.value));
+
+buildAlphaNav();
+render('');
+</script>
+
+</body>
+</html>
